@@ -24,7 +24,13 @@
    }(document, 'script', 'facebook-jssdk'));
 
 
-window.login = function() {FB.login(function(response) {
+};
+</script>
+
+<p>This is my web page</p> 
+
+<script >
+	FB.login(function(response) {
     if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
@@ -33,9 +39,6 @@ window.login = function() {FB.login(function(response) {
     } else {
      console.log('User cancelled login or did not fully authorize.');
     }
-})};
+});
 </script>
-
-<p>This is my web page</p> 
-
 </body> </html>
