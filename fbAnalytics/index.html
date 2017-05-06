@@ -3,14 +3,16 @@
 <head> <meta http-equiv="content-type" content="text/html; charset=utf-8"> <title>Title Goes Here</title> 
 </head> 
 <body> 
+
 <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1068331349977479',
+      cookie     : true,
       xfbml      : true,
-      version    : 'v2.9'
+      version    : 'v2.8'
     });
-    FB.AppEvents.logPageView();
+    FB.AppEvents.logPageView();   
   };
 
   (function(d, s, id){
@@ -20,6 +22,12 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+FB.login();
+
 </script>
 
 <p>This is my web page</p> 
